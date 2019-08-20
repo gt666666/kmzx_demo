@@ -1,0 +1,45 @@
+server:
+  port: 9090
+
+spring:
+  messages:
+   basename: i18n/Messages,i18n/Pages
+
+#  rabbitmq:
+#    host: 114.55.102.45
+#    username: gtjava
+#    password: hello
+#    port: 5672
+#    virtual-host: /
+
+  # 数据库连接配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/amr?useUnicode=true&characterEncoding=UTF-8     # 数据库连接地址
+    username: root                                  # 数据库用户名
+    password: root                                  # 数据库连接密码
+    driver-class-name: org.gjt.mm.mysql.Driver     # 配置MySQL的驱动程序类
+    type: com.alibaba.druid.pool.DruidDataSource    # 配置当前要使用的数据源的操作类型
+    filters:  stat,wall,log4j  #监控过滤配置
+    dbcp2:                # 进行数据库连接池的配置
+      min-idle: 5         # 数据库连接池的最小维持连接数
+      initial-size: 5     # 初始化提供的连接数
+      max-total: 5         # 最大的连接数
+      max-wait-millis: 200      # 等待连接获取的最大超时时间
+
+#    initialSize: 5
+#    minIdle: 5
+#    maxActive: 20
+#    maxWait: 60000
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: SELECT 1 FROM DUAL
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    filters: stat,wall,log4j
+#    logSlowSql: true
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml    # mybatis配置文件所在路径
+  type-aliases-package: com.zhwlt.logistics.pojo         # 定义所有操作类的别名所在包
+  mapper-locations:    classpath:mybatis/mapper/*/*.xml       # 所有的mapper映射文件

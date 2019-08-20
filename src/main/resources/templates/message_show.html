@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" type="image/x-icon" href="/images/dog.ico">
+    <script type="text/javascript"  th:src="@{/js/main.js}"></script>
+</head>
+<body>
+<p  th:text="${url}"/>
+<p  th:text="${mid}"/>
+<!--<div th:replace="@{/commons/footer}::companyInfo"/>-->
+<!--<div th:include="@{/commons/footer}::companyInfo"  th:with="itemid=20,subid=2"/>-->
+
+</body>
+</html>

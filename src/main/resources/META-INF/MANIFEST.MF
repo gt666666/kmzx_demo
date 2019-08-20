@@ -1,0 +1,52 @@
+Manifest-Version: 1.0
+Class-Path: hibernate-validator-6.0.11.Final.jar spring-expression-5.0
+ .8.RELEASE.jar websocket-server-9.4.11.v20180605.jar thymeleaf-3.0.9.
+ RELEASE.jar HikariCP-2.7.9.jar thymeleaf-extras-java8time-3.0.1.RELEA
+ SE.jar spring-rabbit-2.0.5.RELEASE.jar websocket-api-9.4.11.v20180605
+ .jar commons-pool2-2.5.0.jar mybatis-spring-boot-starter-1.3.2.jar La
+ tencyUtils-2.0.3.jar spring-boot-starter-redis-1.4.7.RELEASE.jar unbe
+ scape-1.1.5.RELEASE.jar spring-boot-2.0.4.RELEASE.jar aspectjweaver-1
+ .8.13.jar jetty-plus-9.4.11.v20180605.jar spring-jcl-5.0.8.RELEASE.ja
+ r mysql-connector-java-5.1.46.jar logback-core-1.2.3.jar activation-1
+ .1.jar spring-boot-starter-web-2.0.4.RELEASE.jar websocket-client-9.4
+ .11.v20180605.jar amqp-client-5.1.2.jar jedis-2.9.0.jar spring-beans-
+ 5.0.8.RELEASE.jar asm-analysis-6.2.jar jetty-http-9.4.11.v20180605.ja
+ r websocket-servlet-9.4.11.v20180605.jar spring-tx-5.0.8.RELEASE.jar 
+ javax.annotation-api-1.3.2.jar druid-1.1.10.jar classmate-1.3.4.jar j
+ etty-util-9.4.11.v20180605.jar spring-jdbc-5.0.8.RELEASE.jar lombok-1
+ .16.22.jar asm-tree-6.2.jar logback-classic-1.2.3.jar spring-boot-sta
+ rter-jdbc-2.0.4.RELEASE.jar spring-context-5.0.8.RELEASE.jar mybatis-
+ 3.4.6.jar spring-boot-starter-2.0.4.RELEASE.jar jetty-security-9.4.11
+ .v20180605.jar spring-boot-actuator-autoconfigure-2.0.4.RELEASE.jar a
+ sm-6.2.jar javax.servlet-api-3.1.0.jar spring-boot-starter-thymeleaf-
+ 2.0.4.RELEASE.jar jackson-core-2.9.6.jar jetty-continuation-9.4.11.v2
+ 0180605.jar log4j-to-slf4j-2.10.0.jar jetty-webapp-9.4.11.v20180605.j
+ ar jackson-datatype-jsr310-2.9.6.jar spring-data-commons-2.0.9.RELEAS
+ E.jar log4j-api-2.10.0.jar jetty-server-9.4.11.v20180605.jar spring-b
+ oot-actuator-2.0.4.RELEASE.jar jetty-io-9.4.11.v20180605.jar javax.ma
+ il-1.6.1.jar jackson-datatype-jdk8-2.9.6.jar spring-webmvc-5.0.8.RELE
+ ASE.jar micrometer-core-1.0.6.jar log4j-1.2.17.jar spring-boot-autoco
+ nfigure-2.0.4.RELEASE.jar spring-amqp-2.0.5.RELEASE.jar attoparser-2.
+ 0.4.RELEASE.jar javax-websocket-server-impl-9.4.11.v20180605.jar HdrH
+ istogram-2.1.10.jar validation-api-2.0.1.Final.jar jetty-xml-9.4.11.v
+ 20180605.jar spring-boot-starter-logging-2.0.4.RELEASE.jar spring-boo
+ t-starter-aop-2.0.4.RELEASE.jar spring-retry-1.2.2.RELEASE.jar spring
+ -data-keyvalue-2.0.9.RELEASE.jar thymeleaf-spring5-3.0.9.RELEASE.jar 
+ mybatis-spring-boot-autoconfigure-1.3.2.jar websocket-common-9.4.11.v
+ 20180605.jar jackson-databind-2.9.6.jar mybatis-spring-1.3.2.jar spri
+ ng-web-5.0.8.RELEASE.jar jackson-module-parameter-names-2.9.6.jar spr
+ ing-aop-5.0.8.RELEASE.jar spring-boot-starter-json-2.0.4.RELEASE.jar 
+ jetty-servlets-9.4.11.v20180605.jar jetty-servlet-9.4.11.v20180605.ja
+ r javax-websocket-client-impl-9.4.11.v20180605.jar javax.websocket-ap
+ i-1.0.jar jboss-logging-3.3.2.Final.jar jetty-client-9.4.11.v20180605
+ .jar spring-boot-starter-mail-2.0.4.RELEASE.jar spring-messaging-5.0.
+ 8.RELEASE.jar spring-boot-starter-jetty-2.0.4.RELEASE.jar hutool-all-
+ 4.1.13.jar spring-data-redis-2.0.9.RELEASE.jar spring-boot-devtools-2
+ .0.4.RELEASE.jar jackson-annotations-2.9.0.jar spring-core-5.0.8.RELE
+ ASE.jar jetty-annotations-9.4.11.v20180605.jar spring-boot-starter-ac
+ tuator-2.0.4.RELEASE.jar asm-commons-6.2.jar spring-oxm-5.0.8.RELEASE
+ .jar spring-boot-starter-amqp-2.0.4.RELEASE.jar snakeyaml-1.19.jar sp
+ ring-context-support-5.0.8.RELEASE.jar apache-el-8.5.24.2.jar slf4j-a
+ pi-1.7.25.jar jul-to-slf4j-1.7.25.jar
+Main-Class: com.zhwlt.logistics.Application
+

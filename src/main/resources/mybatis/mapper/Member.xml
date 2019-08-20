@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhwlt.logistics.mapper.IMemberDAO" >
+	<resultMap type="Member" id="MemberResultMap">
+		<id property="ids" column="ids" />
+		<result property="name" column="name" />
+		<result  property="companySalary" column="company_salary"/>
+		<result  property="IsDelete" column="is_delete"/>
+	</resultMap>
+
+	<sql id="member">
+		ids ,name,company_salary,is_delete
+	</sql>
+
+	<sql id="base_query">
+		<trim prefix="WHERE"  prefixOverrides="AND | OR ">
+			<if test="ids!=null">
+				 AND  ids=#{ids}
+			</if>
+			<if test="companySalary!=null">
+				AND company_salary=#{companySalary}
+			</if>
+			<if test="IsDelete!=null">
+				AND is_delete=#{IsDelete}
+			</if>
+		</trim>
+	</sql>
+
+	<sql  id="base">
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="gmtCreate != null">
+				gmt_create,
+			</if>
+			<if test="gmtModified != null">
+				gmt_modified,
+			</if>
+		</trim>
+	</sql>
+
+	<select id="findAll" resultMap="MemberResultMap">
+		SELECT   <include refid="member"/>   FROM member  <include refid="base_query"/>
+	</select>
+
+
+	<select  id="find"  parameterType="Member" resultMap="MemberResultMap">
+		SELECT  <include refid="member"></include> FROM member
+		<include refid="base_query"/>
+			<!--<trim prefix="WHERE" prefixOverrides="AND | OR">-->
+				<!--<if test="ids!=null">-->
+					<!--AND ids=#{ids}-->
+				<!--</if>-->
+				<!--<if test="companySalary!=null">-->
+					<!--AND company_salar=#{companySalary}-->
+				<!--</if>-->
+			<!--</trim>-->
+	</select>
+
+	<select id="findBySalary" parameterType="Integer" resultMap="MemberResultMap">
+		SELECT ids  FROM member WHERE company_salary=#{id};
+	</select>
+
+	<select id="findById" parameterType="java.lang.String" resultMap="MemberResultMap">
+		SELECT <include  refid="member"/> FROM member WHERE ids=#{id};
+	</select>
+
+	<select id="findAllByIds" parameterType="java.util.List" resultMap="MemberResultMap">
+		SELECT <include refid="member"/>
+		FROM member
+		<where>
+			ids IN
+			<foreach collection="list" open="(" close=")" separator="," item="ele">
+				#{ele}
+			</foreach>
+		</where>
+	</select>
+	<select id="findAllBySalary" parameterType="java.util.Set" resultMap="MemberResultMap">
+		SELECT <include refid="member"/>
+		FROM member
+		<where>
+			company_salary IN
+			<foreach collection="set" open="(" close=")" separator="," item="ele">
+				#{ele}
+			</foreach>
+		</where>
+	</select>
+
+	<insert id="insertBatch" parameterType="java.util.List">
+		INSERT INTO settle_notice (
+		<include refid="base" />
+		) VALUES
+		<foreach collection="insertList" index="index" item="item" separator=",">
+			(
+			{item.ids},#{item.name,#{item.companySalary}
+			)
+		</foreach>
+	</insert>
+
+	<insert id="doCreate" parameterType="Member">
+		INSERT  INTO  member (ids,name)VALUES(#{ids},#{name});
+	</insert>
+
+	<update id="doUpdate"  parameterType="Member">
+		   UPDATE   member SET  name=#{name }  WHERE ids=#{ids};
+	</update>
+
+	<delete id="doDelete" parameterType="Member">
+		DELETE FROM member  WHERE  ids=#{ids};
+	</delete>
+
+	<update id="doUpdateByNameAndId"  parameterType="java.util.HashMap">
+		   UPDATE  member SET name=#{name}   WHERE  ids=#{ids}
+	</update>
+</mapper>
