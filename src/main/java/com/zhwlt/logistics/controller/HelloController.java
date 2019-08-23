@@ -27,7 +27,7 @@ public class HelloController {
     String home() {
         //this.memberService.findAll();
         log.info("********12345");
-        return "www.baidu.com12345";
+        return "www.baidu.com";
     }
 
     @RequestMapping("/echo")
