@@ -187,6 +187,27 @@
         </profile>
 
     </profiles>
+    <!-- 配置私服下载，没有私服删除即可 begin -->
+    <repositories>
+        <repository>
+            <id>always_nexus</id>
+            <url>http://192.168.2.88:8081/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://192.168.2.88:8081/nexus/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <!-- 配置私服下载，没有私服删除即可 end -->
 
 
     <build>
