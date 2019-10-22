@@ -60,11 +60,9 @@ public class MemberServiceImpl implements IMemberService {
         return false;
     }
 
+    @Override
     public Member get(String ids) {
-        Member vo = new Member();
-        vo.setIds(ids);
-        vo.setName("KING");
-        return vo;
+        return null;
     }
 
 

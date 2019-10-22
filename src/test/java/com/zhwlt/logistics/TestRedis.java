@@ -1,6 +1,7 @@
 package com.zhwlt.logistics;
 
 import com.zhwlt.logistics.pojo.Member;
+import com.zhwlt.logistics.util.InputUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,8 @@ public class TestRedis {
     @Resource
     private RedisTemplate<String ,String>  redisTemplate;
 
-    @Resource
-    private Member member;
+  @Resource
+   private Member member;
     @Test
     public   void testSet1(){
          this.redisTemplate.opsForValue().set("zhs","www.baidu.com");
@@ -40,6 +41,10 @@ public class TestRedis {
     }
     @Test
     public void testMember(){
-        System.out.println(this.member.getName());
-    }
+       System.out.println(this.member.getName());
+   }
+   @Test
+    public void testGc(){
+       System.out.println( InputUtil.getString("你好"));
+   }
 }

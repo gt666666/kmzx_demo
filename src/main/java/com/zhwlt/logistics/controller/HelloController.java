@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
+import java.util.concurrent.*;
 
 
 //复合注解：@RestController=@Controller+@ResponseBody+其它
@@ -30,9 +31,9 @@ public class HelloController {
         return "www.baidu.com12345";
     }
 
-    @RequestMapping("/echo")
-    String echo(String str) {
-        return str;
+    @PostMapping("/echo")
+    public void echo(String str) throws Exception {
+        ExecutorService service = Executors.newFixedThreadPool(6);
     }
 
 
@@ -41,7 +42,6 @@ public class HelloController {
         return msg;
     }
 
-    @RequestMapping("/object")
     public String object(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("客户端IP地址：" + request.getRemoteAddr());
         System.out.println("获取客户端响应编码：" + response.getCharacterEncoding());
@@ -49,4 +49,6 @@ public class HelloController {
         System.out.println("取得真实路径：" + request.getServletContext().getRealPath("/upload"));
         return "www.baidu.com";
     }
+
+
 }

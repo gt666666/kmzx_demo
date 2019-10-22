@@ -15,11 +15,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 @SpringBootApplication //自带子包扫描
 @EnableScheduling   //启动间隔调度
 public class Application extends SpringBootServletInitializer {
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder applicationBuilder) {
-        return applicationBuilder.sources(Application.class);
-    }
-
     public static void main(String  args[]){
         SpringApplication.run(Application.class,args);
     }
