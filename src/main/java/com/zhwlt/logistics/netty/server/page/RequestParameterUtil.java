@@ -42,19 +42,19 @@ public class RequestParameterUtil {
 				HttpPostRequestDecoder decoder = new HttpPostRequestDecoder(this.request) ; // POST解码
 				decoder.offer(this.content) ;	// 修改解码的开始位置
 				List<InterfaceHttpData> datas = decoder.getBodyHttpDatas(); // 获取所有的HTTP请求参数
-				datas.forEach((param) -> {	// 循环处理所有的参数
-					Attribute attribute = (Attribute) param ;
-					try {
-						List<String> paramValue = null ;
-						if (this.params.containsKey(attribute.getName())) {	// 该内容已经保存过了
-							paramValue = this.params.get(attribute.getName()) ;
-						} else {
-							paramValue = new ArrayList<String>() ; //
-						}
-						paramValue.add(attribute.getValue()) ; // 获取一个数据进行保存
-						this.params.put(attribute.getName(), paramValue) ;
-					} catch (Exception e) {}
-				});
+//				datas.forEach((param) -> {	// 循环处理所有的参数
+//					Attribute attribute = (Attribute) param ;
+//					try {
+//						List<String> paramValue = null ;
+//						if (this.params.containsKey(attribute.getName())) {	// 该内容已经保存过了
+//							paramValue = this.params.get(attribute.getName()) ;
+//						} else {
+//							paramValue = new ArrayList<String>() ; //
+//						}
+//						paramValue.add(attribute.getValue()) ; // 获取一个数据进行保存
+//						this.params.put(attribute.getName(), paramValue) ;
+//					} catch (Exception e) {}
+//				});
 			}
 		}
 	}
